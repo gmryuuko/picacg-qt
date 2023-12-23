@@ -11,6 +11,7 @@ from task.qt_task import QtTaskBase
 from tools.book import BookMgr, Book
 from tools.status import Status
 from tools.str import Str
+from tools.comic_info import print_book
 
 
 class BookEpsView(QtWidgets.QWidget, Ui_BookEps, QtTaskBase):
@@ -102,6 +103,7 @@ class BookEpsView(QtWidgets.QWidget, Ui_BookEps, QtTaskBase):
         if not info:
             return
         downloadEpsId = QtOwner().downloadView.GetDownloadEpsId(self.bookId)
+        print_book(info)
         for index in range(0, info.epsCount):
             epsInfo = info.epsDict.get(index)
             label = QLabel(str(index + 1) + "-" + epsInfo.title)
