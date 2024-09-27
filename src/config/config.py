@@ -60,7 +60,7 @@ Waifu2xVersion = "1.2.0"
 
 # waifu2x
 CloseWaifu2x = False
-CanWaifu2x = True
+CanWaifu2x = False  # True
 ErrorMsg = ""
 
 Encode = 0             # 当前正在使用的索引

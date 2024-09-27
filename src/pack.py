@@ -8,10 +8,13 @@ output_root = 'downloads/pack'
 
 no_meta = []
 
+
 def to_zip(eps_d, res_d, meta_d):
     eps_d = os.path.join(eps_d, 'original')
     episodes = os.listdir(eps_d)
     for episode in episodes:
+        if not os.path.isdir(os.path.join(eps_d, episode)):
+            continue
         print(f'Compressing... {episode}')
         meta_src = os.path.join(meta_d, episode, "ComicInfo.xml")
         meta_dst = os.path.join(eps_d, episode, "ComicInfo.xml")
@@ -35,6 +38,10 @@ if __name__ == '__main__':
             eps_d = os.path.join(commies_root, commic)
             res_d = os.path.join(output_root, commic)
             meta_d = os.path.join(meta_root, commic)
+
+            if not os.path.isdir(eps_d):
+                continue
+
             print(f'Processing: {commic}')
             os.mkdir(res_d)
             to_zip(eps_d, res_d, meta_d)
