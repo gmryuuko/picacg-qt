@@ -61,7 +61,7 @@ Waifu2xVersion = "1.1.6"
 
 
 # waifu2x
-CanWaifu2x = True
+CanWaifu2x = False  # True
 ErrorMsg = ""
 
 Encode = 0             # 当前正在使用的索引
