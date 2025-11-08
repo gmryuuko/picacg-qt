@@ -42,6 +42,9 @@ if __name__ == '__main__':
             if not os.path.isdir(eps_d):
                 continue
 
+            if os.path.exists(res_d):
+                continue
+
             print(f'Processing: {commic}')
             os.mkdir(res_d)
             to_zip(eps_d, res_d, meta_d)
